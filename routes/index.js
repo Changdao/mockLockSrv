@@ -8,6 +8,12 @@ router.get('/', function(req, res, next) {
 	var jqstr=req.query['jquerycallback'];
   switch (actionId)
   {
+    case 'readiccard':
+    {
+      console.log('读房卡返回门锁号，默认是01030299，如果你没有该门锁号将无法读取成功');
+      res.send(jqstr+'({"openPortRet":"0", "readCardRet":"0", "room":"01030299", "cardnum":"1234"})');
+    }
+    break;
     case 'writeiccard':
     {
       res.send(jqstr+'({"openPortRet":"0","writeCardRet":"0","msg":"I am a programmer!"})');  
