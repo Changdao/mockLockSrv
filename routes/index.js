@@ -28,6 +28,8 @@ router.get('/', function(req, res, next) {
     {
       // console.log('getpic' + fs);
       var bmpBuffer = fs.readFileSync('./public/others/ZP.bmp');
+      //Access-Control-Allow-Origin: *
+      res.setHeader("Access-Control-Allow-Origin", "*"); 
       res.send(bmpBuffer);
     }
     break;
